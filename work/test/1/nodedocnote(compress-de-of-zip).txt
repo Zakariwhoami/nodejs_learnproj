@@ -1,0 +1,164 @@
+******STREAM******
+stream is a collection of data.
+steam data is not stored all at once in
+a memory instead once at a time.
+types;::
+- writable
+- readable 
+- duplex (writable & readable)
+- transfrom: is the act of modify and
+  transfromation
+
+:::
+-"end":::this is use when no data to read
+-"data"::this is use when data is available to read
+-"error"::this is use when an error occur will reading
+-"finish"
+
+// in addition stream give the ability
+to work it file in chunks(is division),
+not stored all at once in
+a memory instead once at a time
+
+// reading command "readerstream"
+// writing command "writerstea'][;'
+m"
+
+***PIPING THE STREAM*******
+this the act of flush one file data
+to another.
+______>>> "readerStream.pipe(writerSteam"
+
+
+****chaining stream(zip)********
+// create zip file
+fs.createReadStream('input.txt')
+    .pipe(zlib.createGzip())
+    .pipe(fs.createWriteStream('input.txt.gz'));
+    
+console.log('FILE COMPRESSED');
+
+// decompressed
+
+// fs.createReadStream('input.txt.gz')
+//     .pipe(zlib.createGunzip())
+//     .pipe(fs.createWriteStream('input.txt'))
+
+// console.log('FILE IS DECOMPRESSED');
+
+
+**************************************
+**************FILE SYSTEM*************
+**************************************
+
+fs module: it enable developers to read
+and write.
+
+
+fs module deal with synchronous and
+asynchronous, synchronous is process take first pa
+rimeter callback as an completion and take last paramenter
+function callback as error in asynchro
+nous
+
+synchronous = is for completion
+asynchronous = fired means complete and
+		check for error.
+code
+//writing synchr & asynchro
+fs.write.File.sync(filepath, data); //synchr
+fs.write.Filr(filepath, data, error); //asynchr
+
+
+NB: let you think like write is push
+    and read is pull
+
+//reading asynchr & asynchr
+CODE:
+var data = fs.readFilesync('input.txt'); // synchr
+fs.readFile('input.txt', err = () => {
+	err ? console.log(err) : console.log('completed');
+});
+****this involved read/writing by open a file***::
+
+CODE:::
+fs.open(path, flag/mode, encodee(void)={})
+fs
+
+the flaq::it contain::
+-w = write
+-w+ = read & write
+-ws = write in synchronous
+-ws+ = write & read in synchronous
+//the same for read "r" and append 'a'
+
+/***********/GET_FILE_INFO/**********/
+
+this use .stst to get the info of the file as type of
+character, file, FIFO(first in first out),
+size, word,date, format
+
+we first use stst then fs.stats as an attribute
+fs.stat(path, encoding(err, stats){})
+
+// we usually us a code for close an open file
+fs.close(path, callback)
+
+PROBLEM:
+//WHEN THE IS MANY ACTIVITIES TO BE DONE TO WRITE OR
+READ A FILE IN ASYNCHRONY IT CALL BE HELL BECAUSE THERE
+ARE MANY CALLBACK
+HERE::"
+	//open - write or read by syncr then close stat
+///when there is many large number callback then came unorganise because ther many activities that were we use nest
+var data = "an waht mean of light even if you don't see i, what is the true meaning of lifet"
+async function write_file() {
+    await fs.promises.writeFile('input.txt', data)
+    console.log('successfull writen')
+}
+write_file();
+" 
+
+///////////////////DELETE OR CREATE FILE
+NB:even if you peste the path in read read or
+it automatically create it..
+***DELETE
+USE "fs.unlink(path, callback)"
+
+// creating a directory an accessing the
+// file
+
+fs.mkdir(path, callback(in void))
+
+//to access or to show files in the 
+// directory
+
+fs.readdir(path, callback) // ME READ THE PATH
+
+//REMOVE DIRECTORY
+fs.rmdir(path, callback)
+
+//EXAMPLE OF THE CODE::::
+"
+////remove of directory using 'rmdir'
+function new1() {
+    console.log("going to write a repository of work")
+    fs.mkdir('./work', (err)=>{
+        err ? 
+        console.log(err) :
+        console.log('successifully created!!!');
+    })
+}
+
+console.log('remove of directory');
+fs.rmdir("./work/test/1", (err)=>{
+    err ? console.log(err) :
+
+    console.log('reading the directory of WORK')
+    fs.readdir('./work/', (err)=>{
+        err ? new1() :
+        console.log('here are ther files')
+    })
+
+})
+"

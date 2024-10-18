@@ -1,0 +1,23 @@
+{
+    "user1": {
+        "name" : "zakaria",
+        "password" : "12345678",
+        "age" : 33,
+        "id" : 1
+    },
+
+    "user2" : {
+        "name" : "abdallah",
+        "password" : "a12345678",
+        "age" : 15,
+        "id" : 2
+    },
+
+    "user3" : {
+        "name" : "maimuna",
+        "password" : "m12345678",
+        "age" : 12,
+        "id" : 3
+
+    }
+}
